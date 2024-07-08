@@ -76,6 +76,7 @@ final class GeneratorProcessor: StateProcessor<GeneratorState, GeneratorAction, 
     override func perform(_ effect: GeneratorEffect) async {
         switch effect {
         case .appeared:
+            fatalError("This is a test")
             await generateValue(shouldSavePassword: true)
         }
     }
