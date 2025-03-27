@@ -56,9 +56,13 @@ public class AlertTextField {
         self.text = text ?? ""
     }
 
+    /// A callback invoked when the text changes.
+    public var onTextChanged: (() -> Void)?
+
     @objc
     func textChanged(in textField: UITextField) {
         text = textField.text ?? ""
+        onTextChanged?()
     }
 }
 
